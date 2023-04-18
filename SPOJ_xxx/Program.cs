@@ -4,8 +4,14 @@
     {
         static void Main(string[] args)
         {
-            // Main BRANCH
-            //TEST
+            // Posegregowac liczby od najwiekszej do najmniejszej
+            int numberOfTests = int.Parse(Console.ReadLine());
+            for(int i = 0; i < numberOfTests; i++)
+            {
+                int[] tab = new int[numberOfTests];
+                numberOfTests = tab[i];
+            }
+            Console.WriteLine($"{tab}" ;
         }
     }
 }
