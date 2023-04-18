@@ -4,14 +4,25 @@
     {
         static void Main(string[] args)
         {
-            // Posegregowac liczby od najwiekszej do najmniejszej
             int numberOfTests = int.Parse(Console.ReadLine());
-            for(int i = 0; i < numberOfTests; i++)
+            int[] tab = new int[numberOfTests];
+
+            // Wczytanie liczb do tablicy
+            for (int i = 0; i < numberOfTests; i++)
             {
-                int[] tab = new int[numberOfTests];
-                numberOfTests = tab[i];
+                int inputNumber = int.Parse(Console.ReadLine());
+                tab[i] = inputNumber;
             }
-            Console.WriteLine($"{tab}" ;
+
+            // Sortowanie tablicy w kolejności od największej do najmniejszej
+            Array.Sort(tab);
+            Array.Reverse(tab);
+
+            // Wyświetlenie posortowanej tablicy
+            foreach (int number in tab)
+            {
+                Console.Write($"{number} ");
+            }
         }
     }
 }
