@@ -4,25 +4,28 @@
     {
         static void Main(string[] args)
         {
-            int numberOfTests = int.Parse(Console.ReadLine());
-            int[] tab = new int[numberOfTests];
-
-            // Wczytanie liczb do tablicy
-            for (int i = 0; i < numberOfTests; i++)
+            int howManyTimes = int.Parse(Console.ReadLine());
+            for(int j = 0; j < howManyTimes; j++)
             {
-                int inputNumber = int.Parse(Console.ReadLine());
-                tab[i] = inputNumber;
+                string input = Console.ReadLine();
+                string[] inputNumbers = input.Split(' ');
+                int[] tab = new int[inputNumbers.Length];
+
+                for (int i = 0; i < inputNumbers.Length; i++)
+                {
+                    tab[i] = int.Parse(inputNumbers[i]);
+                }
+
+                Array.Sort(tab);
+                Array.Reverse(tab);
+
+                foreach (int number in tab)
+                {
+                    Console.Write(number + " ");
+                }
+                Console.WriteLine(" ");
             }
 
-            // Sortowanie tablicy w kolejności od największej do najmniejszej
-            Array.Sort(tab);
-            Array.Reverse(tab);
-
-            // Wyświetlenie posortowanej tablicy
-            foreach (int number in tab)
-            {
-                Console.Write($"{number} ");
-            }
         }
     }
 }
